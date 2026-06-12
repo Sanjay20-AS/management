@@ -11,6 +11,6 @@ public class StudentRequest {
     private String lastName;
     private String phone;
     private String email;
-//    private UserRole role;
+    private UserRole role;
     private AddressDTO address;
 }

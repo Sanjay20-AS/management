@@ -1,5 +1,6 @@
 package com.employee.management.controller;
 
+import com.employee.management.dto.StudentRequest;
 import com.employee.management.dto.StudentResponse;
 import com.employee.management.service.StudentService;
 import com.employee.management.model.Student;
@@ -33,19 +34,20 @@ public class StudentController {
     }
 
     @PutMapping("/{id}")
-    public String updateStudents(@PathVariable int id, @RequestBody Student s){
+    public ResponseEntity<StudentResponse> updateStudents(@PathVariable int id, @RequestBody StudentRequest s){
 
-        return studentService.updateAllStudents(id, s);
+        return ResponseEntity.ok(studentService.updateAllStudents(id, s));
 
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Student> getStudent(@PathVariable long id){
+    public ResponseEntity<StudentResponse> getStudent(@PathVariable long id){
         //return studentService.getStu(id);
-        Student s= studentService.getStu(id);
-        if(s!=null){
-            return ResponseEntity.ok(s);
+
+        StudentResponse response= studentService.getStu(id);
+        if(response==null){
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("/put/{id}")

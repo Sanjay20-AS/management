@@ -1,7 +1,9 @@
 package com.employee.management.service;
 
 import com.employee.management.dto.AddressDTO;
+import com.employee.management.dto.StudentRequest;
 import com.employee.management.dto.StudentResponse;
+import com.employee.management.model.Address;
 import com.employee.management.model.Student;
 import com.employee.management.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +21,7 @@ public class StudentService {
 
     public List<StudentResponse> getAllStudents(){
 
-        return studentRepository.findAll().stream().map(this::mapToUserResponse)
+        return studentRepository.findAll().stream().map(this::mapToStudentResponse)
                 .collect(Collectors.toList());
     }
 
@@ -28,22 +30,44 @@ public class StudentService {
         return "Students added successfully";
     }
 
-    public String updateAllStudents(long id, Student s){
+    public StudentResponse updateAllStudents(long id, StudentRequest s){
         Student student= studentRepository.findById(id).orElse(null);
         if(student==null){
-            return "Student not updated";
+            return null;
         }
         student.setFirstName(s.getFirstName());
         student.setLastName(s.getLastName());
-        studentRepository.save(student);
-        return "Student updated successfully";
+        student.setPhone(s.getPhone());
+        student.setEmail(s.getEmail());
+        student.setRole(s.getRole());
+
+        if(s.getAddress()!=null){
+            Address address = student.getAddress();
+            if(address==null){
+                address= new Address();
+            }
+            address.setStreet(s.getAddress().getStreet());
+            address.setCity(s.getAddress().getCity());
+            address.setState(s.getAddress().getState());
+            address.setCountry(s.getAddress().getCountry());
+            address.setZipcode(s.getAddress().getZipcode());
+            student.setAddress(address);
+        }
+
+
+        Student updatedStudent=studentRepository.save(student);
+
+        return mapToStudentResponse(updatedStudent);
 
     }
 
-    public Student getStu(Long id){
+    public StudentResponse getStu(Long id){
 
-        return studentRepository.findById(id).orElse(null);
+        return (StudentResponse) studentRepository.findById(id).map(this::mapToStudentResponse)
+                .orElse(null);
     }
+
+
 
     public Student updateStu(Long id, Student s){
 
@@ -80,7 +104,7 @@ public class StudentService {
         return "Student not found";
     }
 
-    private StudentResponse mapToUserResponse(Student student){
+    private StudentResponse mapToStudentResponse(Student student){
         StudentResponse response = new StudentResponse();
         response.setId(student.getId());
         response.setFirstName(student.getFirstName());
@@ -91,6 +115,7 @@ public class StudentService {
 
         if(student.getAddress()!=null){
             AddressDTO addressDTO= new AddressDTO();
+            addressDTO.setId(student.getAddress().getId());
             addressDTO.setStreet(student.getAddress().getStreet());
             addressDTO.setCity(student.getAddress().getCity());
             addressDTO.setState(student.getAddress().getState());
