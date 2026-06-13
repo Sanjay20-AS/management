@@ -16,6 +16,7 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
+
     @PostMapping
     public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest productRequest){
 

@@ -9,9 +9,12 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("""
-        Select p from Product p where (p.active=true and (Lower(p.name) like lower (concat('%',:keyword,'%')) or
-                (lower(p.category) like lower (concat('%',:keyword,'%')) )))
+        Select p from Product p
+                where (p.active=true
+                        and (Lower(p.name) like lower (concat('%',:keyword,'%'))
+                                or(lower(p.category) like lower (concat('%',:keyword,'%')) )))
         """)
     List<Product> searchProducts(String keyword);
+
 
 }
