@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Product Management</title>
+
+
+<style>
+    header, footer {
+        background-color: #0a66c3;
+    color: white;
+        text-align: center;
+        padding: 10px;
+    }
+
+    body {
+        background-color: #f4f6f9;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+    }
+
+    ul li a {
+        display: block;
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        background-color: #111111;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background-color: black;
+        margin: 20px 0;
+    }
+
+    div button {
+        background-color: dodgerblue;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 14px 16px;
+        margin: 16px;
+    }
+
+    input {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid lightskyblue;
+    }
+
+    p {
+        text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="product.html">Product</a></li>
+    <li><a href="cart.html">Cart</a></li>
+</ul>
+
+<header>
+    <h1>Product Management</h1>
+</header>
+
+<p>This is a product management section.</p>
+
+<hr>
+
+<h3>Product List:</h3>
+
+<table border="1" cellspacing="0" cellpadding="10">
+    <tr align="center">
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Stock Quantity</th>
+    </tr>
+
+<tr align="center">
+    <td>Laptop</td>
+    <td>Dell Inspiron 15</td>
+    <td>55000</td>
+    <td>10</td>
+</tr>
+
+<tr align="center">
+    <td>Mouse</td>
+    <td>Wireless Mouse</td>
+    <td>800</td>
+    <td>50</td>
+</tr>
+
+<tr align="center">
+    <td>Keyboard</td>
+    <td>Mechanical Keyboard</td>
+    <td>2500</td>
+    <td>25</td>
+</tr>
+
+<tr align="center">
+    <td>Monitor</td>
+    <td>24 Inch Full HD</td>
+    <td>12000</td>
+    <td>15</td>
+</tr>
+
+
+</table>
+
+<hr>
+
+<div>
+    <h3>Add Product</h3>
+
+
+<form id="addProductForm">
+
+    <label>Product Name:</label><br>
+    <input type="text"><br>
+
+    <label>Description:</label><br>
+    <input type="text"><br>
+
+    <label>Price:</label><br>
+    <input type="number"><br>
+
+    <label>Stock Quantity:</label><br>
+    <input type="number"><br>
+
+</form>
+
+<button>Add Product</button>
+
+
+</div>
+
+<hr>
+
+<div>
+    <h3>Update Product</h3>
+
+
+<form id="updateProductForm">
+
+    <label>Product Name:</label><br>
+    <input type="text"><br>
+
+    <label>Description:</label><br>
+    <input type="text"><br>
+
+    <label>Price:</label><br>
+    <input type="number"><br>
+
+    <label>Stock Quantity:</label><br>
+    <input type="number"><br>
+
+</form>
+
+<button>Update Product</button>
+
+
+</div>
+
+<hr>
+
+<div>
+    <h3>Delete Product</h3>
+
+<form id="deleteProductForm">
+
+    <label>Product Name:</label><br>
+    <input type="text"><br>
+
+</form>
+
+<button>Delete Product</button>
+
+
+</div>
+
+<hr>
+
+<footer>
+    &copy; Student Product Management 2026
+</footer>
+
+</body>
+</html>

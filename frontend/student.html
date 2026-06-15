@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    header,footer{
+        background-color: #0a66c3;
+    color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    body{
+        background-color:  #f4f6f9;
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  margin-right: 20;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+  
+    hr{
+        border: none;
+        height: 2px;
+        background-color: black;
+        margin: 20px 0;
+    }
+    div button{
+        background-color: dodgerblue;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 14px 16px;
+        margin: 16px;
+    }
+    input{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    p{
+        text-align: center;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+       
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+
+</style>
+
+
+<body>
+    <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="student.html">Student</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            
+        </ul>
+    <header >
+    <h1>Student Management</h1>
+</header>
+<p>This is a student management Section</p>
+<hr>
+<h3>Student List:</h3>
+<table border="1" cellspacing="0" cellpadding="10">
+  <tr align="center">
+    <th>First name</th>
+    <th>Last name</th>
+    <th>email</th>
+    <th>phone number</th>
+    <th>address</th>
+  </tr>
+  <tr align="center">
+    <td>Maria</td>
+    <td>Anders</td>
+    <td>maria.anders@example.com</td>
+    <td>+1 (555) 019-2834</td>
+    <td>Obere Str. 57, Berlin, Germany</td>
+  </tr>
+  <tr align="center">
+    <td>Francisco</td>
+    <td>Chang</td>
+    <td>f.chang@moctezuma.com</td>
+    <td>+52 (55) 5555-1234</td>
+    <td>Centro comercial Moctezuma, Mexico City, Mexico</td>
+  </tr>
+  <tr align="center">
+    <td>Roland</td>
+    <td>Mendel</td>
+    <td>roland.m@restate.com</td>
+    <td>+43 (1) 987-6543</td>
+    <td>Kirchweg 15, Salzburg, Austria</td>
+  </tr>
+  <tr align="center">
+    <td>Helen</td>
+    <td>Bennett</td>
+    <td>helen.b@islandtrading.com</td>
+    <td>+44 (20) 7946-0123</td>
+    <td>Garden House, Crowther Way, London, UK</td>
+  </tr>
+</table>
+<hr>
+<div>
+    <h3>Add Students</h3>
+    <form id="addStudentForm">
+        
+        <label> First Name: </label><br>
+        <input type="text"/><br>
+        <label> Last Name: </label><br>
+        <input type="text"/><br>
+        <label> Email: </label><br>
+        <input type="Email"/><br>
+        <label> Phone Number: </label><br>
+        <input type="number"/><br>
+        <label> Address: </label><br>
+        <input type="text"/><br>
+        
+    </form>
+
+    <button >Add Student</button>
+</div>
+<hr>
+
+<div>
+    <h3>Update Students</h3>
+    <form id="updateStudentForm">
+
+        <label> First Name: </label><br>
+        <input type="text"/><br>
+        <label> Last Name: </label><br>
+        <input type="text"/><br>
+        <label> Email: </label><br>
+        <input type="Email"/><br>
+        <label> Phone Number: </label><br>
+        <input type="number"/><br>
+        <label> Address: </label><br>
+        <input type="text"/><br>
+
+    </form>
+
+    <button >Update Student</button>
+</div>
+<hr>
+<div>
+    <h3>Delete Students:</h3>
+    <form id="DeleteStudentForm">
+
+        <label> Student Name: </label><br>
+        <input type="text"/><br>
+        <label> Email: </label><br>
+        <input type="Email"/><br>
+
+    </form>
+
+    <button >Delete Student</button>
+</div>
+<hr>
+
+</body>
+
+<footer>
+    &COPY; Student Product Management 2026
+</footer>
+
+
+</html>
