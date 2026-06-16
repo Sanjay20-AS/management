@@ -1,34 +1,41 @@
 <html>
     <style>
         header,footer{
-        background-color: #0a66c3;
+        background-color: #5361fe;
         color: white;
         text-align: center;
         padding: 10px;
     }
     body{
+        margin: 0px;
+        padding: 0px;
         background-color:  #f4f6f9;
     }
-        ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
-  display: flex;
-  justify-content: center;
-}
+        #navbar {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+            background-color: #333333;
+              display: flex;
+              justify-content: center;
+        }
 
-ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  margin-right: 20;
-  text-decoration: none;
-}
 
-ul li a:hover {
-  background-color: #111111;
-}
+        #navbar li a{
+          display: block;
+          color: white;
+          padding: 14px 16px;
+
+          text-decoration: none;
+        }
+
+        #settings-item{
+
+            margin-left: auto;
+        }
+        ul li a:hover {
+          background-color: #111111;
+        }
          
          #description{
             font-family: verdana;
@@ -36,56 +43,99 @@ ul li a:hover {
             text-align: center;
         }
         button{
-       background-color: #0a66c3;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    display: block;
-    margin: 20px auto;
-    }
+           background-color: #0a66c3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 20px auto;
+            }
+    .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            
+            background-color: white;
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+        .flex-container div {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid ;
+            border-radius: 10px;
+            border-color: #0a66c3;
+            
+        }
+        .flex-container h3{
+            text-align: center;
+
+        }
         </style>
+
         <head>
-  <title>Student Product Management Platform</title>
-</head>
+        <title>Student Product Management Platform</title>
+        </head>
+
     <body>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
+        <ul id="navbar">
+            <li ><a href="index.html">Home</a></li>
             <li><a href="student.html">Student</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="cart.html">Cart</a></li>
-            
+
+            <li id="settings-item">
+                <a href="settings.html">
+                    <img src="assets/settings-1.png" alt="Settings" width="24" height="24" style="display: block;">
+                </a>
+                <button id="logout">Logout</button>
+            </li>
+<!--            <li>-->
+<!--                <button id="logout">Logout</button>-->
+<!--            </li>-->
+
         </ul>
+
+
         <header >
     <h1>Student Product Management Platform</h1>
 </header>
         <section >
         <div id="description">
             
-            <p>Manage students, products, and cart items efficiently.</p1>
-            <p >
-    A simple platform to organize student records, manage product inventory,
-    and track cart operations in one place.
-</p>
+            <p>Manage students, products, and cart items efficiently.</p>
+            <p >A simple platform to organize student records, manage product inventory,
+    and track cart operations in one place. </p>
         </div>
     </section>
     
 
 <button>Get Started</button>
 <h2 style="text-align:center;">Features</h2>
-
-<div>
-    <h3>Student Management</h3>
+<div class="flex-container">
+        <div>
+            <h3 >Student Management</h3>
     <p >Add, update, view, and delete student records.</p>
-
-    <h3>Product Management</h3>
+        </div>
+        <div>
+            <h3>Product Management</h3>
     <p>Manage products, prices, and stock quantities.</p>
-
-    <h3>Cart Management</h3>
+        </div>
+        <div>
+            <h3>Cart Management</h3>
     <p>Add products to cart and manage purchases.</p>
+        </div>
+        
+    </div>
+<div>
+    
+
+    
+
+    
 </div>
     <marquee behavior="scroll" direction="left" scrollamount="10">
         <h2>Welcome to the Student Product Management Platform!</h2>
