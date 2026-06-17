@@ -39,7 +39,7 @@ public class OrderService {
         Student student=studentOptional.get();
 
         BigDecimal totalPrice=cartItems.stream()
-                .map(cartItems::getPrice)
+                .map(CartItem::getPrice)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         Order order=new Order();
@@ -56,8 +56,23 @@ public class OrderService {
         order.setItems(orderItems);
         Order savedOrder=orderRepository.save(order);
 
-        CartService.clearCart(studentId);
-        return Optional.of(mapToOrderReponse(savedOrder));
+        cartService.clearCart(studentId);
+        return Optional.of(mapToOrderResponse(savedOrder));
+    }
+    private OrderResponse mapToOrderResponse(Order savedOrder){
+        return new OrderResponse(
+                savedOrder.getId(),
+                savedOrder.getTotalAmount(),
+                savedOrder.getStatus(),
+                savedOrder.getItems().stream().map(orderItem-> new OrderItemDTO(
+                        orderItem.getId(),
+                        orderItem.getProduct().getId(),
+                        orderItem.getQuantity(),
+                        orderItem.getPrice(),
+                        orderItem.getPrice().multiply(new BigDecimal(orderItem.getQuantity()))
+
+                )).toList(),savedOrder.getCreatedAt()
+        );
     }
 
 

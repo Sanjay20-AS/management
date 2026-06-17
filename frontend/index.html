@@ -7,8 +7,8 @@
         padding: 10px;
     }
     body{
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         background-color:  #f4f6f9;
     }
         #navbar {
@@ -17,7 +17,7 @@
               padding: 0;
             background-color: #333333;
               display: flex;
-              justify-content: center;
+              align-items: center;
         }
 
 
@@ -30,9 +30,18 @@
         }
 
         #settings-item{
-
             margin-left: auto;
         }
+        /*#logout {*/
+        /*    background: none;*/
+        /*    border: none;*/
+        /*    color: white;*/
+        /*    padding: 14px 16px;*/
+        /*    font-family: inherit; !* Inherits the page font *!*/
+        /*    font-size: inherit;    !* Inherits the link font size *!*/
+        /*    cursor: pointer;*/
+        /*    display: block;*/
+        /*}*/
         ul li a:hover {
           background-color: #111111;
         }
@@ -81,23 +90,21 @@
 
     <body>
 
-        <ul id="navbar">
-            <li ><a href="index.html">Home</a></li>
-            <li><a href="student.html">Student</a></li>
-            <li><a href="product.html">Product</a></li>
-            <li><a href="cart.html">Cart</a></li>
+    <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="student.html">Student</a></li>
+        <li><a href="product.html">Product</a></li>
+        <li><a href="cart.html">Cart</a></li>
 
-            <li id="settings-item">
-                <a href="settings.html">
-                    <img src="assets/settings-1.png" alt="Settings" width="24" height="24" style="display: block;">
-                </a>
-                <button id="logout">Logout</button>
-            </li>
-<!--            <li>-->
-<!--                <button id="logout">Logout</button>-->
-<!--            </li>-->
-
-        </ul>
+        <li id="settings-item">
+            <a href="settings.html" style="display: flex; align-items: center;">
+                <img src="assets/settings-1.png" alt="Settings" width="24" height="24">
+            </a>
+        </li>
+        <li>
+            <button id="logout" onclick="handleLogout()">Logout</button>
+        </li>
+    </ul>
 
 
         <header >
